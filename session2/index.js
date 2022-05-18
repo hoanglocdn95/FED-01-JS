@@ -41,9 +41,6 @@ alert('số tiền kiếm được: ' + futureMoney + ' đồng');
 // -------------
 
 const username = prompt('Tên của bạn là:', 'Unknown');
-
 alert('Hello ' + username + ', hôm nay là ngày ' + new Date());
-
 const favoriteSubject = prompt('môn học yêu thích');
-
 favoriteSubject === 'công nghệ thông tin' ? alert(true) : null;
