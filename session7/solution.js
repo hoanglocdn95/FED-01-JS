@@ -53,4 +53,42 @@ const startGame = () => {
   return alert('This game is over!!!');
 };
 
-startGame();
+// startGame();
+
+// Bài 1
+const listShop = [
+  {
+    nameShop: 'corgiShop',
+    address: '29 Lê Quang Sung',
+    chargedOf: 'Lộc',
+    phoneNumber: 935964949,
+    products: [
+      { sku: 10001, name: 'sản phẩm 1', price: 10 },
+      { sku: 10002, name: 'sản phẩm 2', price: 100 },
+    ],
+  },
+  {
+    nameShop: 'huskyShop',
+    address: '29 Quang Trung',
+    chargedOf: 'Lộc 2',
+    phoneNumber: 9359622234,
+    products: [
+      { sku: 10001, name: 'sản phẩm 3', price: 10 },
+      { sku: 10002, name: 'sản phẩm 2', price: 100 },
+    ],
+  },
+  {
+    nameShop: 'shibaShop',
+    address: '29 Lê lợi',
+    chargedOf: 'Lộc 3',
+    phoneNumber: 9344622234,
+    products: [
+      { sku: 10001, name: 'sản phẩm 2', price: 10 },
+      { sku: 10002, name: 'sản phẩm 5', price: 100 },
+    ],
+  },
+];
+
+const shopData = Object.fromEntries(
+  listShop.map((item) => [item.nameShop, item])
+);
