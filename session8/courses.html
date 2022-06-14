@@ -6,8 +6,14 @@
   <body>
     <form>
       <div>
-        <label>Khóa học JS cơ bản 1- 100.000 vnd</label>
-        <input type="checkbox" name="JS1" value="JS1" data-price="100000" />
+        <label>Khóa học JS cơ bản 1 - 100.000 vnd</label>
+        <input
+          type="checkbox"
+          name="JS1"
+          value="JS1"
+          data-price="100000"
+          onclick="console.log('JS1')"
+        />
       </div>
       <div>
         <label>Khóa học JS cơ bản 2 - 100.000 vnd</label>
@@ -42,7 +48,16 @@
     <script>
       const queryParameter = location.search;
 
+      // const arrCheckbox = document.querySelectorAll('[type=checkbox]');
+      // console.log('arrCheckbox', arrCheckbox);
+
+      // arrCheckbox.forEach((item) => {
+      //   console.log('arrCheckbox.forEach ~ item', item);
+      //   item.onclick = () => console.log({ value: item.value });
+      // });
+
       document.querySelector('[type=submit]').onclick = (e) => {
+        console.log('document.querySelector ~ e', e);
         e.preventDefault();
         const arrCheckbox = document.querySelectorAll('[type=checkbox]');
         let checkedItems = [];

@@ -4,11 +4,11 @@
     <title>Checkout</title>
   </head>
   <body>
-    <p id="email"></p>
-    <p id="name"></p>
-    <p id="age"></p>
-    <p id="phoneNumber"></p>
-    <p id="money"></p>
+    <div id="email"></div>
+    <div id="name"></div>
+    <div id="age"></div>
+    <div id="phoneNumber"></div>
+    <div id="money"></div>
     <form>
       <div>
         <input type="radio" name="methodPayment" value="momo" />
@@ -28,6 +28,7 @@
     <script>
       const fakeCoupon = '01062022';
       const queryParameter = location.search;
+      console.log('queryParameter', queryParameter);
       const subStr = queryParameter.replace('?', '&');
       const objectStudent = Object.fromEntries(
         subStr
@@ -35,14 +36,23 @@
           .filter((item) => item)
           .map((item) => item.split('='))
       );
-      const showInfoById = (id) => {
-        document.getElementById(id).innerText = id + ': ' + objectStudent[id];
-      };
-      showInfoById('email');
-      showInfoById('name');
-      showInfoById('age');
-      showInfoById('phoneNumber');
-      showInfoById('money');
+
+      // const showInfoById = (id) => {
+      //   document.getElementById(id).innerText = id + ': ' + objectStudent[id];
+      // };
+
+      // showInfoById('email');
+      // showInfoById('name');
+      // showInfoById('age');
+      // showInfoById('phoneNumber');
+      // showInfoById('money');
+
+      Object.keys(objectStudent).map((keyItem) => {
+        document.getElementById(keyItem).innerHTML = `
+          <label><b>${keyItem}: </b></label> <span><i>${objectStudent[keyItem]}</i></span>
+        `;
+      });
+
       document.getElementById('submit').onclick = (e) => {
         e.preventDefault();
         let money = objectStudent.money;
