@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <p id="email"></p>
+    <p id="name"></p>
+    <p id="age"></p>
+    <p id="phoneNumber"></p>
+    <p id="money"></p>
+    <form>
+      <div>
+        <input type="radio" name="methodPayment" value="momo" />
+        <label for="momo">momo</label>
+      </div>
+      <div>
+        <input type="radio" name="methodPayment" value="visa" />
+        <label for="visa">visa</label>
+      </div>
+      <div>
+        <input type="radio" name="methodPayment" value="cash" />
+        <label for="cash">cash</label>
+      </div>
+      fakeCoupon <input placeholder="coupon" id="coupon" />
+      <button type="submit" id="submit">Thanh Toán</button>
+    </form>
+    <script>
+      const fakeCoupon = '01062022';
+      const queryParameter = location.search;
+      const subStr = queryParameter.replace('?', '&');
+      const objectStudent = Object.fromEntries(
+        subStr
+          .split('&')
+          .filter((item) => item)
+          .map((item) => item.split('='))
+      );
+      const showInfoById = (id) => {
+        document.getElementById(id).innerText = id + ': ' + objectStudent[id];
+      };
+      showInfoById('email');
+      showInfoById('name');
+      showInfoById('age');
+      showInfoById('phoneNumber');
+      showInfoById('money');
+      document.getElementById('submit').onclick = (e) => {
+        e.preventDefault();
+        let money = objectStudent.money;
+        const coupon = document.getElementById('coupon').value;
+        if (coupon !== fakeCoupon) alert('ko tồn tại coupon');
+        else money = parseInt(money) - 50000;
+        alert('mua hàng thành công, số tiền phải trả là ' + money);
+        location.href = `http://127.0.0.1:5500/session8/register.html`;
+      };
+    </script>
+  </body>
+</html>

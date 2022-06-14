@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Courses</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label>Khóa học JS cơ bản 1- 100.000 vnd</label>
+        <input type="checkbox" name="JS1" value="JS1" data-price="100000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 2 - 100.000 vnd</label>
+        <input type="checkbox" name="JS2" value="JS2" data-price="100000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 3 - 50.000 vnd</label>
+        <input type="checkbox" name="JS3" value="JS3" data-price="50000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 4 - 150.000 vnd</label>
+        <input type="checkbox" name="JS4" value="JS4" data-price="150000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 5 - 200.000 vnd</label>
+        <input type="checkbox" name="JS5" value="JS5" data-price="200000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 6 - 300.000 vnd</label>
+        <input type="checkbox" name="JS6" value="JS6" data-price="300000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 7- 30.000 vnd</label>
+        <input type="checkbox" name="JS7" value="JS7" data-price="30000" />
+      </div>
+      <div>
+        <label>Khóa học JS cơ bản 8- 800.000 vnd</label>
+        <input type="checkbox" name="JS8" value="JS8" data-price="800000" />
+      </div>
+      <button type="submit">Next</button>
+    </form>
+    <script>
+      const queryParameter = location.search;
+
+      document.querySelector('[type=submit]').onclick = (e) => {
+        e.preventDefault();
+        const arrCheckbox = document.querySelectorAll('[type=checkbox]');
+        let checkedItems = [];
+        arrCheckbox.forEach((item) => {
+          checkedItems.push({
+            checked: item.checked,
+            value: item.value,
+            price: parseInt(item.dataset.price),
+          });
+        });
+        const isBiggerThan = (max) =>
+          checkedItems.filter((item) => item.checked).length > max;
+
+        let money = checkedItems
+          .filter((item) => item.checked)
+          .reduce((sum, currentItem) => sum + currentItem.price, 0);
+
+        if (money > 300000) {
+          if (isBiggerThan(3))
+            return alert('không thể chọn quá 3 khóa học, xin giảm bớt');
+        } else {
+          if (isBiggerThan(4))
+            return alert('không thể chọn quá 4 khóa học, xin giảm bớt');
+          else return alert('bạn có thể chọn thêm 1 khóa học');
+        }
+
+        if (money >= 600000 && money < 1000000) {
+          money = money * 0.95;
+        }
+        if (money >= 1000000) {
+          money = money * 0.9;
+        }
+        location.href = `http://127.0.0.1:5500/session8/checkout.html${queryParameter}&money=${money}`;
+      };
+    </script>
+  </body>
+</html>

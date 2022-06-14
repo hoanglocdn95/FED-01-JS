@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Register</title>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label> Email </label>
+        <input type="email" required name="email" tabindex="1" />
+      </div>
+      <div>
+        <label> Name </label>
+        <input
+          type="text"
+          required
+          minlength="6"
+          maxlength=""
+          name="name"
+          tabindex="2"
+        />
+      </div>
+      <div>
+        <label> age </label>
+        <input
+          type="number"
+          required
+          min="18"
+          max="30"
+          name="age"
+          tabindex="3"
+        />
+      </div>
+      <div>
+        <label> phoneNumber </label>
+        <input required name="phoneNumber" tabindex="4" />
+      </div>
+      <button type="submit">Next</button>
+    </form>
+    <script>
+      const nextAction = (e) => {
+        e.preventDefault();
+        const email = document.querySelector('[name=email]').value;
+        const name = document.querySelector('[name=name]').value;
+        const age = document.querySelector('[name=age]').value;
+        const phoneNumber = document.querySelector('[name=phoneNumber]').value;
+        location.href = `http://127.0.0.1:5500/session8/courses.html?email=${email}&name=${name}&age=${age}&phoneNumber=${phoneNumber}`;
+      };
+
+      document.querySelector('[type=submit]').onclick = nextAction;
+
+      window.addEventListener('keypress', (e) => {
+        if (e.code === 'Enter') {
+          nextAction(e);
+        }
+      });
+    </script>
+  </body>
+</html>
