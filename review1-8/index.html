@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Review 1-8</title>
+    <style>
+      .layout {
+        display: none;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.08);
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .modal {
+        width: 250px;
+        padding: 15px;
+        border: 2px solid;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+      }
+      #open:hover {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="open">Mở modal</button>
+    <p id="textContent"></p>
+    <div class="layout">
+      <div class="modal">
+        <p class="title">Nhập N</p>
+        <input id="numberLine" />
+        <button id="draw">Vẽ hình</button>
+        <button id="close">Close</button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
