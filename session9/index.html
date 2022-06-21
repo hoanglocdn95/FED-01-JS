@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Session 9</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #board {
+        display: flex;
+        flex-wrap: wrap;
+        width: 400px;
+        height: 400px;
+      }
+      #board > div {
+        display: flex;
+      }
+
+      #board > div > div {
+        width: 50px;
+        height: 50px;
+        border: 0.5px solid;
+      }
+
+      #board > div:nth-child(odd) > div:nth-child(odd),
+      #board > div:nth-child(even) > div:nth-child(even) {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="put-chess">Đặt cờ</button>
+    <div id="board"></div>
+    <script src="./index.js"></script>
+    <script src="./solution.js"></script>
+  </body>
+</html>
