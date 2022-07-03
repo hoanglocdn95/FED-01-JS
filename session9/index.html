@@ -7,32 +7,59 @@
         box-sizing: border-box;
       }
       #board {
-        display: flex;
-        flex-wrap: wrap;
         width: 400px;
-        height: 400px;
-      }
-      #board > div {
+        height: 450px;
         display: flex;
+        margin: 50px;
       }
-
-      #board > div > div {
+      .item {
         width: 50px;
         height: 50px;
-        border: 0.5px solid;
+        border: 1px solid black;
+      }
+      .col-3 > div:first-child {
+        position: relative;
+      }
+      .col-3 > div:first-child::after {
+        content: '';
+        position: absolute;
+        height: 71px;
+        width: 1px;
+        transform: rotate(-45deg);
+        background: black;
+        top: -11px;
+        left: 23px;
       }
 
-      #board > div:nth-child(odd) > div:nth-child(odd),
-      #board > div:nth-child(even) > div:nth-child(even) {
-        background-color: black;
-        color: white;
+      #chess {
+        position: absolute;
+        top: -25px;
+        left: -18px;
+        width: 450px;
+        height: 500px;
+        display: flex;
+        margin: 50px;
+      }
+      .itemChess {
+        width: 50px;
+        height: 50px;
+      }
+      .chessCircle {
+        width: 50px;
+        height: 50px;
+        border: 5px solid blue;
+        border-radius: 999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: goldenrod;
       }
     </style>
   </head>
   <body>
-    <button id="put-chess">Đặt cờ</button>
     <div id="board"></div>
-    <script src="./index.js"></script>
+    <div id="chess"></div>
+    <!-- <script src="./index.js"></script> -->
     <script src="./solution.js"></script>
   </body>
 </html>
