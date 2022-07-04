@@ -4,19 +4,49 @@
     <title>Session 10</title>
   </head>
   <body>
-    username
-    <input id="username" type="text" name="username" placeholder="type name" />
+    Email
+    <input id="email" name="email" type="email" />
     <br />
-    password
-    <input id="password" name="password" type="password" />
+    birthday
+    <input id="birthday" name="birthday" type="date" />
     <br />
     phoneNumber
     <input id="phoneNumber" name="phoneNumber" />
     <br />
-    address
-    <input id="address" name="address" />
+    <hr />
+    <p id="genders">genders</p>
+    <br />
+    male
+    <input type="radio" value="male" name="gender" />
+    <br />
+    female
+    <input type="radio" value="female" name="gender" />
+    <br />
+    <hr />
+    <p id="courses">courses</p>
+    <br />
+    html
+    <input type="checkbox" value="html" name="course" />
+    <br />
+    css
+    <input type="checkbox" value="css" name="course" />
+    <br />
+    js
+    <input type="checkbox" value="js" name="course" />
+    <br />
+    <hr />
+    classes:
+    <select name="class" id="classes">
+      <option value="FED01">FED01</option>
+      <option value="FED02">FED02</option>
+      <option value="FED03">FED03</option>
+    </select>
+    <hr />
     <button id="submit">Submit</button>
-    <script src="./index.js"></script>
+    <hr />
+    <input type="date" id="from" />
+    <input type="date" id="to" />
+    <!-- <script src="./index.js"></script> -->
     <script src="./solution.js"></script>
   </body>
 </html>
