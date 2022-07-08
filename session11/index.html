@@ -2,9 +2,73 @@
 <html lang="en">
   <head>
     <title>Session 11</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #layout {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.08);
+        position: fixed;
+      }
+      #container {
+        padding: 20px;
+        border: 2px solid black;
+      }
+      #formStudents {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <script src="./index.js"></script>
+    <div id="layout">
+      <div id="container">
+        id
+        <input name="id" id="id" />
+        <br />
+        password
+        <input name="password" id="password" type="password" />
+        <br />
+        <button id="login">Login</button>
+      </div>
+    </div>
+
+    <div id="formStudents">
+      <form>
+        cmnd
+        <input name="cmnd" id="cmnd" />
+        <br />
+        name
+        <input name="name" id="name" />
+        <br />
+        birthday
+        <input name="birthday" id="birthday" type="date" />
+        <br />
+        phoneNumber
+        <input name="phoneNumber" id="phoneNumber" type="number" />
+        <br />
+        <button id="submit">Submit</button>
+      </form>
+      <br />
+      <button id="logout">Logout</button>
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <th>CMND</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>PhoneNumber</th>
+          </tr>
+        </thead>
+        <tbody id="dataStudent"></tbody>
+      </table>
+    </div>
+    <!-- <script src="./index.js"></script> -->
     <script src="./solution.js"></script>
   </body>
 </html>
