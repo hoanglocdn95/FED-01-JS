@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": "ighakjghdii",
+      "name": "Loc",
+      "phone": "0935964949"
+    },
+    {
+      "id": "2",
+      "name": "Toan",
+      "phone": "0935964949"
+    },
+    {
+      "id": "0",
+      "name": "Trường",
+      "phone": 0
+    }
+  ]
+}
